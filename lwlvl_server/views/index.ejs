@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%- message %></p>
+    <form method="POST" enctype="multipart/form-data">
+      <!--<input type="text" name="name" />-->
+      <input type="file" name="file"/>
+      <button type="submit">Go</button>
+    </form>
+  </body>
+</html>

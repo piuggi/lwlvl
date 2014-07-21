@@ -30,3 +30,10 @@ node_modules
 #MAC OS 
 
 .DS_Store
+
+#Project Specifics
+
+*.mov
+*.mp4
+*.avi
+
