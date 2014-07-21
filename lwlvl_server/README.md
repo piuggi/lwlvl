@@ -18,3 +18,8 @@ Forever/PM2 Usage Coming Soon
 Notes:
  - Must Have two Keys files, AWS_Keys.js and AWS_Keys.json properly formatted these are not included in the repo
  
+To-Do's:
+
+ - Need to switch over to Production S3 Bucket 'im-lwlvl-collab'  when ready to rock.
+ - Need to add instructions and title to homepage.
+ - Project URL
