@@ -4,10 +4,48 @@ body {
   background-color: #000;
 }
 
+#main{
+	margin: 0 auto;
+	width: 60%;
+	text-align: center;
+}
+
+#form{
+	margin: 60px auto;
+	padding: 10px 0 30px;
+	border: 1px solid white;
+	width: 40%;
+}
+
 h1,h2,h3,h4,h5,h6,p,input{
   color:#fff;
+}
+p.space{
+	margin: 40px 0 0;
 }
 
 a {
   color: #00B7FF;
+}
+/* Target Mobile */
+@media screen and (max-device-width: 640px) {
+	body{
+		padding: 5px;
+	}
+	#main{ 
+	
+		width: 90%;
+		 
+	}
+	#form {
+		width: 80%;
+		padding: 20px 0 40px;
+	}
+	input{
+		font-size: 2em;
+	}
+	button{
+		font-size: 2em;
+	}
+	
 }

@@ -5,12 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+  	<section id="main">
     <h1><%= title %></h1>
-    <p><%- message %></p>
-    <form method="POST" enctype="multipart/form-data">
-      <!--<input type="text" name="name" />-->
-      <input type="file" name="file"/>
-      <button type="submit">Go</button>
-    </form>
+    <p>For thousands of years human cultures have been amazed by the sky.</p>
+    <p>No two locations have the exact same sky ever, providing an infinite number of unique views to the world.</p>
+    <p>Take a moment out of your day or night and capture the sky in your unique location.</p>
+    <p class="space">Using your mobile device begin recording a video, set your phone down on a surface with the camera facing up.</p>
+    <p><strong>Upload your submission here.</strong></p>
+    <section id="form">
+	    <p><%- message %></p>
+	    <form method="POST" enctype="multipart/form-data">
+	      <!--<input type="text" name="name" />-->
+	      <% if(message.indexOf('Thank') == -1 ){ %>
+	      	<input type="file" name="file"/> 
+		  	<button type="submit">Go</button>
+	      <% }%>
+	    </form>
+  	</section><!-- #form -->
+  	<p>Submissions will be featured at <a href="http://www.lwlvl.com/">lWlVl</a> August 22 - 23, 2014</p>
+    </section><!-- #main -->
   </body>
 </html>
