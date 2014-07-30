@@ -10,7 +10,7 @@ exports.s3 = s3
 var multipartUpload = require(__dirname+'/S3_Multipart')
 
 var keys = require(__dirname+'/AWS_Keys')
-var BUCKET_NAME = 'im-lwlvl-collab-testing'
+var BUCKET_NAME = 'im-lwlvl-collab'
 
 exports.BUCKET_NAME = BUCKET_NAME
 
