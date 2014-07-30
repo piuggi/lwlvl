@@ -3,15 +3,37 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45421450-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
   </head>
   <body>
   	<section id="main">
+  	<p><a target="_blank" href="http://www.lwlvl.com/"><img src="/imgs/lWlVl_logo.png"></a></p>
     <h1><%= title %></h1>
-    <p>For thousands of years human cultures have been amazed by the sky.</p>
-    <p>No two locations have the exact same sky ever, providing an infinite number of unique views to the world.</p>
-    <p>Take a moment out of your day or night and capture the sky in your unique location.</p>
-    <p class="space">Using your mobile device begin recording a video, set your phone down on a surface with the camera facing up.</p>
-    <p><strong>Upload your submission here.</strong></p>
+    <% if(message.indexOf('Thank') == -1 ){ %>
+    <p><strong>A project by <a target="_blank>" href="http://incrediblemachines.net">Incredible Machines</a></strong></p>
+    <p>There is nothing on earth more constant nor more changing than the sky.</p>
+    <p>Every person on the planet looks up to see the same sky. And yet none of us ever see exactly the same sky twice.</p>
+    <p>The sky has inspired mankind’s greatest feats of exploration, has been the source of countless wishes and prayers and dreams. It connects our lives and frames our experiences in a primal way, one that far predates the technology we now insist is our most meaningful way of connecting.</p>
+    <p>cirrostratus proposes a new way of using this technology to explore our relationship with the world around us. Rather than use your device to mediate this exchange with your environment, we propose that you simply set it down and focus on the moment in front of you. All the while, you can use that device to be a part of something bigger, to capture something unique and temporal and beautiful.</p>
+    <p>We want to take the biggest, most wonderous element in our the world, cram it into your tiny little phone, and then bring it back to life in a piece that celebrates our existence in all its spectacular forms.</p>
+    <%  } %>
+    <section id="instructions">
+	    <p><strong>Follow the instructions below to capture your sky, and submit it to cirrostratus @ lWlVl.</strong></p>
+	    
+		<p>1. Using your mobile device, open the camera application and begin recording a video.</p>
+		<p>2. Place your device (camera facing upwards) on an outdoor surface and capture your sky for 1 - 5 minutes</p>
+		<p>3. Upload your video submission below to be included in cirrostratus at the lWlVl festival</p>
+	<iframe class="vine-embed" src="https://vine.co/v/M0LYqxWPHhj/embed/simple" width="320" height="320" frameborder="0"></iframe>
+    <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
     <section id="form">
 	    <p><%- message %></p>
 	    <form method="POST" enctype="multipart/form-data">
@@ -22,7 +44,12 @@
 	      <% }%>
 	    </form>
   	</section><!-- #form -->
-  	<p>Submissions will be featured at <a href="http://www.lwlvl.com/">lWlVl</a> August 22 - 23, 2014</p>
+    </section>
+
+  	
+  	<p>Thanks for participating in cirrostratus. For updates about this project and more please <a target="_blank" href="http://incrediblemachines.us7.list-manage.com/subscribe?u=2258a760e80ce8dc11f7c07b6&id=f4f686f2ac">join our mailing list here</a>.</p>
+  	<p>Questions, comments, inquiries, please contact us <a href="http://incrediblemachines.net/#contact" target="_blank">directly</a>.</p>
+  	
     </section><!-- #main -->
   </body>
 </html>
