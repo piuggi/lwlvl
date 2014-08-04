@@ -5,32 +5,35 @@ void ofApp::setup(){
 
     for(int i=0; i<N_VIDEO_PLAYERS; i++) {
         videoPlayers.push_back(new ofxAVFVideoPlayer());
-        //videoPlayers[i]->loadMovie("test.mov");
+        //videoPlayers[i]->loadMovie("test.mov"); //TODO: for multiple videos
     }
     
     selectedCorner = -1;
     
-    ofSetVerticalSync(true);
-    
-    ofSetBoxResolution(1000);
-    
-    ofEnableSmoothing();
-    
-    ofEnableTextureEdgeHack();
-    
-    ofEnableAntiAliasing();
+    int VIDEO_WIDTH = 4447;
+    int VIDEO_HEIGHT = 809;
     
     warpPoints[0].set(0,0);
-    warpPoints[1].set(1920/2,0);
-    warpPoints[2].set(1920/2,1080/2);
-    warpPoints[3].set(0,1080/2);
+    warpPoints[1].set(VIDEO_WIDTH,0);
+    warpPoints[2].set(VIDEO_WIDTH,VIDEO_HEIGHT);
+    warpPoints[3].set(0,VIDEO_HEIGHT);
     
-    videoPlayers[0]->loadMovie("1.mp4");
+    //playing with stuffs
+    ofSetVerticalSync(true);
+    ofSetBoxResolution(1000);
+    ofEnableSmoothing();
+    ofEnableTextureEdgeHack();
+    ofEnableAntiAliasing();
+    
+    videoPlayers[0]->loadMovie("Vanishing_1.mov"); //loading just 1 video for now
+    
+    ofSetWindowShape(VIDEO_WIDTH+60, VIDEO_HEIGHT+60); //add a little border outside video
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     
+//TODO: FOR WHEN N_VIDEO_PLAYERS > 1
 //    int i=0;
 //    for(auto p : videoPlayers) {
 //        p->update();
@@ -56,7 +59,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
     ofTranslate(30, 30);
+
+//TODO: FOR WHEN N_VIDEO_PLAYERS > 1
 //    int i=0;
 //    for(auto p : videoPlayers) {
 //        //p->draw(ofMap(i++, 0, videoPlayers.size(), 0, ofGetWidth()), ofGetHeight()/2 - 108*2, 192*4, 108*4);
@@ -110,10 +116,8 @@ void ofApp::quadWarp(ofTexture &tex, ofPoint lt, ofPoint rt, ofPoint rb, ofPoint
         }
     }
     
-//    tex.getTextureReference().bind();
     tex.bind();
     mesh.draw();
-//    tex.getTextureReference().unbind();
     tex.unbind();
     mesh.drawVertices();
 }
@@ -138,6 +142,9 @@ void ofApp::keyPressed(int key){
         case '4':
             videoPlayers[3]->loadMovie("iHRMF2012_SwedishHouseMafia_DontWorryChild.mov");
             videoPlayers[3]->setVolume(0.0f);
+            break;
+        case 'f':
+            ofToggleFullscreen();
             break;
     }
 }
